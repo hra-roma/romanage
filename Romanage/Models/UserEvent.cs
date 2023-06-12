@@ -11,7 +11,7 @@ namespace Romanage.Models
         public int UserId { get; set; }
         public int EventId { get; set; }
         
-        public string[] Ticket { get; set; }
+        public List<string> Ticket { get; set; }
 
     }
 }
