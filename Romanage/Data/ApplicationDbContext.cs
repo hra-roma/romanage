@@ -14,5 +14,7 @@ namespace Romanage.Data
 
         public List<Event> Events { get; set; }
         public List<Payment> Payments { get; set; }
+        public List<UserRole> UserRoles { get; set; }
+
     }
 }
