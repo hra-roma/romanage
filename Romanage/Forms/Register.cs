@@ -58,14 +58,14 @@ namespace Romanage.Forms
                 return;
             }
 
-            if (String.IsNullOrEmpty(phone) == true && phone.Length != 10)
+            if (String.IsNullOrEmpty(phone) == true || phone.Length != 10)
             {
                 MessageBox.Show("Telefon nömrəsi standardlara uyğun deyil.(xxxxxxxxxx şəklində olmalıdır)");
                 return;
             }
 
 
-            if (String.IsNullOrEmpty(password) == true && password.Length < 6)
+            if (String.IsNullOrEmpty(password) == true || password.Length < 6)
             {
                 MessageBox.Show("Şifrə düzgün formatda deyil.");
                 return;
@@ -86,22 +86,31 @@ namespace Romanage.Forms
 
 
 
+            int newId = 1;
+            if (users.Count != 0)
+            {
+                newId = users[users.Count - 1].Id + 1;
+            }
+
+
             User user = new User();
             user.Name = name;
             user.Surname = surname;
             user.Email = email;
-            user.Password = new byte[10];
+            user.Password = password;
             user.Created = DateTime.Now;
             user.Updated = DateTime.Now;
-            user.Id = 1;
+            user.Id = newId;
             user.Phone = phone;
             user.Photo = "";
-
+            //TODO: Hash password
 
             ApplicationDbContext.Users.Add(user);
 
-
             MessageBox.Show("Ugurlu emeliyyat!");
+
+
+            this.Close();
         }
     }
 }
