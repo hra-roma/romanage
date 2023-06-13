@@ -7,14 +7,19 @@ using System.Threading.Tasks;
 
 namespace Romanage.Data
 {
-    public class ApplicationDbContext
+    public static class ApplicationDbContext
     {
-        public List<User> Users { get; set; }
-        public List<UserEvent> UserEvents { get; set; }
+        public static List<User> Users { get; set; }
+        public static List<UserEvent> UserEvents { get; set; }
 
-        public List<Event> Events { get; set; }
-        public List<Payment> Payments { get; set; }
-        public List<UserRole> UserRoles { get; set; }
+        public static List<Event> Events { get; set; }
+        public  static List<Payment> Payments { get; set; }
+        public static List<UserRole> UserRoles { get; set; }
+
+        static ApplicationDbContext()
+        {
+            Users = new List<User>();
+        }
 
     }
 }

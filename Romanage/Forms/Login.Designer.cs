@@ -35,6 +35,8 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            button1 = new Button();
+            label4 = new Label();
             SuspendLayout();
             // 
             // txbx_email
@@ -62,7 +64,7 @@
             btn_login.FlatAppearance.BorderSize = 0;
             btn_login.FlatStyle = FlatStyle.Popup;
             btn_login.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_login.Location = new Point(147, 298);
+            btn_login.Location = new Point(147, 264);
             btn_login.Name = "btn_login";
             btn_login.Size = new Size(224, 71);
             btn_login.TabIndex = 2;
@@ -106,12 +108,33 @@
             label3.TabIndex = 7;
             label3.Text = "Şifrə";
             // 
+            // button1
+            // 
+            button1.Location = new Point(182, 381);
+            button1.Name = "button1";
+            button1.Size = new Size(140, 57);
+            button1.TabIndex = 8;
+            button1.Text = "Qeydiyyatdan keç";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(227, 345);
+            label4.Name = "label4";
+            label4.Size = new Size(43, 20);
+            label4.TabIndex = 9;
+            label4.Text = "və ya";
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
+            Controls.Add(label4);
+            Controls.Add(button1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -135,5 +158,7 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private Button button1;
+        private Label label4;
     }
 }
