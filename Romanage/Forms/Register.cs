@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -97,13 +98,20 @@ namespace Romanage.Forms
             user.Name = name;
             user.Surname = surname;
             user.Email = email;
-            user.Password = password;
             user.Created = DateTime.Now;
             user.Updated = DateTime.Now;
             user.Id = newId;
             user.Phone = phone;
             user.Photo = "";
-            //TODO: Hash password
+
+
+            SHA256 sha256 = SHA256.Create();
+
+            byte[] buffer = Encoding.UTF8.GetBytes(password);
+
+            byte[] hash = sha256.ComputeHash(buffer);
+
+            user.Password = Convert.ToBase64String(hash);
 
             ApplicationDbContext.Users.Add(user);
 

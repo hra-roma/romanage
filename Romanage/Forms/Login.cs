@@ -1,6 +1,8 @@
 ﻿using Romanage.Data;
 using Romanage.Forms;
 using Romanage.Models;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Romanage
 {
@@ -39,13 +41,23 @@ namespace Romanage
 
 
 
-            if(loggedUser.Password != password)
+            SHA256 sha256 = SHA256.Create();
+
+            byte[] buffer = Encoding.UTF8.GetBytes(password);
+
+            byte[] hash = sha256.ComputeHash(buffer);
+
+            string base64password =  Convert.ToBase64String(hash);
+
+            if (loggedUser.Password != base64password)
             {
                 MessageBox.Show("Istifadəçi adı və ya şifrə yanlışdır.");
                 return;
             }
 
-            //TODO: open events form
+            Main mainForm = new Main(this);
+            this.Hide();
+            mainForm.Show();
 
             MessageBox.Show("Xos geldiniz.");
 
