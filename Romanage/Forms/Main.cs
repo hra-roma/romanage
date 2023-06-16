@@ -61,9 +61,6 @@ namespace Romanage.Forms
             int y = 10;
             for (int i = 0; i < events.Count; i++)
             {
-
-
-
                 // Create a Panel control
                 FlowLayoutPanel flowLayoutPanel = new FlowLayoutPanel();
 
@@ -74,6 +71,8 @@ namespace Romanage.Forms
                 flowLayoutPanel.Location = new Point(x, y);
 
                 flowLayoutPanel.Size = new Size(250, 100);
+
+                flowLayoutPanel.DoubleClick += Flowlayout_dblclick;
 
 
                 // Create three Label controls
@@ -89,10 +88,16 @@ namespace Romanage.Forms
                 label3.Text = Convert.ToString(events[i].Price);
                 label3.AutoSize = true;
 
+                Label label4 = new Label();
+                label4.Text = events[i].Id.ToString();
+                label4.AutoSize = true;
+                label4.Hide();
+
                 // Add the Label controls to the Panel
                 flowLayoutPanel.Controls.Add(label1);
                 flowLayoutPanel.Controls.Add(label2);
                 flowLayoutPanel.Controls.Add(label3);
+                flowLayoutPanel.Controls.Add(label4);
 
                 pnl_events.Controls.Add(flowLayoutPanel);
 
@@ -104,6 +109,17 @@ namespace Romanage.Forms
                     x = 10;
                 }
             }
+        }
+
+        private void Flowlayout_dblclick(object? sender, EventArgs e)
+        {
+            FlowLayoutPanel panel = (FlowLayoutPanel)sender;
+            Label label = (Label)panel.Controls[3];
+
+            MessageBox.Show(label.Text);
+            int eventId = Convert.ToInt32(label.Text);
+
+            //TODO: izah et
         }
     }
 }

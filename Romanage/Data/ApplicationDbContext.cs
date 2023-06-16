@@ -49,6 +49,7 @@ namespace Romanage.Data
 
             Event myevent = new Event();
 
+            myevent.Id = 1;
             myevent.Name = "Dolu kadehi ters tut";
             myevent.Price = 30;
             myevent.Address = "Baki konqres merkezi";
@@ -62,6 +63,7 @@ namespace Romanage.Data
 
             Event myevent2 = new Event();
 
+            myevent2.Id = 2;
             myevent2.Name = "Dolu kadehi ters tutma";
             myevent2.Price = 35;
             myevent2.Address = "Baki konqres merkezi deyil";
@@ -74,6 +76,7 @@ namespace Romanage.Data
 
             Event myevent3 = new Event();
 
+            myevent3.Id = 3;
             myevent3.Name = "Dolu kadehi ters tutma";
             myevent3.Price = 35;
             myevent3.Address = "Baki konqres merkezi deyil";
@@ -86,6 +89,8 @@ namespace Romanage.Data
 
             Event myevent4 = new Event();
 
+
+            myevent4.Id = 4;
             myevent4.Name = "Dolu kadehi ters tutma";
             myevent4.Price = 35;
             myevent4.Address = "Baki konqres merkezi deyil";
@@ -97,6 +102,7 @@ namespace Romanage.Data
 
             Event myevent5 = new Event();
 
+            myevent5.Id = 5;
             myevent5.Name = "Dolu kadehi ters tutma";
             myevent5.Price = 35;
             myevent5.Address = "Baki konqres merkezi deyil";
@@ -108,6 +114,7 @@ namespace Romanage.Data
 
             Event myevent6 = new Event();
 
+            myevent6.Id = 6;
             myevent6.Name = "Dolu kadehi ters tutma";
             myevent6.Price = 35;
             myevent6.Address = "Baki konqres merkezi deyil";
@@ -120,6 +127,8 @@ namespace Romanage.Data
 
             Event myevent7 = new Event();
 
+
+            myevent7.Id = 7;
             myevent7.Name = "Dolu kadehi ters tutma";
             myevent7.Price = 35;
             myevent7.Address = "Baki konqres merkezi deyil";
@@ -131,6 +140,8 @@ namespace Romanage.Data
 
             Event myevent8 = new Event();
 
+
+            myevent8.Id = 8;
             myevent8.Name = "Dolu kadehi ters tutma";
             myevent8.Price = 35;
             myevent8.Address = "Baki konqres merkezi deyil";
