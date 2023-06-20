@@ -116,10 +116,11 @@ namespace Romanage.Forms
             FlowLayoutPanel panel = (FlowLayoutPanel)sender;
             Label label = (Label)panel.Controls[3];
 
-            MessageBox.Show(label.Text);
             int eventId = Convert.ToInt32(label.Text);
 
-            //TODO: izah et
+
+
+            //TODO: izah etdim
         }
     }
 }
